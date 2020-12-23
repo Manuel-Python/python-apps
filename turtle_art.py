@@ -2,7 +2,7 @@ from turtle import Turtle, Screen #Puppet Master
 import random
 
 ti = Turtle()
-ti.shape("turtle")
+ti.shape("arrow")
 ti.color("salmon1")
 
 
@@ -33,7 +33,7 @@ def draw_shape(num_sides):
         ti.forward(100)
         ti.right(angle)
 
-for x in range(3,30):
+for x in range(3,15):
     ti.color(random.choice(colours))
     draw_shape(x)
 
