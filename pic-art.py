@@ -5,6 +5,7 @@ import random
 
 tim = Turtle()
 turtle.colormode(255)
+
 tim.speed("fastest")
 tim.penup()
 tim.hideturtle()
