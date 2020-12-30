@@ -10,6 +10,23 @@ ti = t.Turtle()
 def move_forward():
     ti.forward(10)
 
+def move_backwards():
+    ti.backward(10)
+
+def turn_right():
+    new_heading = ti.heading() -10
+    ti.setheading(new_heading)
+
+def turn_left():
+    new_heading = ti.heading() + 10
+    ti.setheading(new_heading)
+
+def clear():
+    ti.clear() #clear this turtles graphics
+    ti.penup()
+    ti.home()
+    ti.pendown()
+
 # rgb_colors = []
 # colors = colorgram.extract('image.jpg', 30)
 # for color in colors:
@@ -50,5 +67,9 @@ for dot_count in range(1, num_dots+1):
 t.hideturtle()
 screen = t.Screen()
 screen.listen()
-screen.onkey(key="space", fun=move_forward)
+screen.onkey(key="w", fun=move_forward)
+screen.onkey(key="s", fun=move_backwards)
+screen.onkey(key="a", fun=turn_left)
+screen.onkey(key="d", fun=turn_right)
+screen.onkey(key="c", fun=clear)
 screen.exitonclick()
