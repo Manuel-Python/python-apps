@@ -1,0 +1,19 @@
+PLACEHOLDER = "[name]"
+
+
+with open("./Input/Names/invited_names.txt") as names_file:
+    names = names_file.readlines()
+    print(names)
+
+with open("./Input/Letters/starting_letter.txt") as letter_file:
+    letter_contents = letter_file.read()
+    for name in names:
+        print("name",name)
+        stripped_name = name.strip() #remove newline, if any
+        print("Striped_name",stripped_name)
+        new_letter = letter_contents.replace(PLACEHOLDER, stripped_name)
+        print(new_letter)
+        print("\n\n\n")
+        with open(f"./Output/ReadyToSend/letter_for_{stripped_name}.txt", mode="w") as completed_letter:
+            completed_letter.write(new_letter)
+
